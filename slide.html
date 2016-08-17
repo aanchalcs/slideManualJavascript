@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<link rel='stylesheet' href='slide.css'>
+<body>
+
+<div class='slideshow-container'>
+<div class='mySlides fade'>
+<div class='numberText'>1 / 5</div>
+<img src='images/1.jpg' style='width:100%'>
+<div class='text'>The eyespots of a giant panda cub are initially in the shape of a circle. As the cub grows, the circles become shaped like a teardrop.</div>
+</div>
+
+<div class='mySlides fade'>
+<div class='numberText'>2 / 5</div>
+<img src='images/2.jpg' style='width:100%'>
+<div class='text'>Pandas have lived on Earth for two to three million years.</div>
+</div>
+
+<div class='mySlides fade'>
+<div class='numberText'>3 / 5</div>
+<img src='images/3.jpg' style='width:100%'>
+<div class='text'>Giant pandas are on the brink of extinction, with just over 1,000 pandas left in the world. Scientists are hoping to increase the wild panda population to 5,000 by 2025.</div>
+</div>
+
+<div class='mySlides fade'>
+<div class='numberText'>4 / 5</div>
+<img src='images/4.jpg' style='width:100%'>
+<div class='text'>Pandas are pigeon-toed; in other words, they walk with their front paws turned inward.</div>
+</div>
+
+<div class='mySlides fade'>
+<div class='numberText'>5 / 5</div>
+<img src='images/5.jpg' style='width:100%'>
+<div class='text'>The panda spends 14-16 hours a day eating bamboo.</div>
+</div>
+
+
+<a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+<a class='next' onclick='plusSlides(1)'>&#10095;</a>
+
+<div style='text-align:center'>
+<span class='dot' onclick='currentS(1)'></span>
+<span class='dot' onclick='currentS(2)'></span>
+<span class='dot' onclick='currentS(3)'></span>
+<span class='dot' onclick='currentS(4)'></span>
+<span class='dot' onclick='currentS(5)'></span>
+</div>
+
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+
+
+</script>
+
+</body>
+</html>
